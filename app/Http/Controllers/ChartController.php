@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Jabatan;
+use App\Pegawai;
+use App\User;
 use Illuminate\Http\Request;
 
 class ChartController extends Controller
@@ -14,7 +17,11 @@ class ChartController extends Controller
     public function index()
     {
         //
-        return view('chart.index');
+
+        $jmlh_user =  User::count();
+        $jmlh_pegawai = Pegawai::count();
+        $jmlh_kontrak = Jabatan::count();
+        return view('chart.index', compact('jmlh_user', 'jmlh_pegawai', 'jmlh_kontrak'));
     }
 
     /**

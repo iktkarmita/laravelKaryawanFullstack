@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Pegawai;
+use App\User;
 use App\Jabatan;
+use App\Pegawai;
 use Illuminate\Http\Request;
 //use App\Repositories\JabatanRepository;
 
@@ -29,7 +30,10 @@ class JabatanController extends Controller
     {
         //
         $pegawai = Pegawai::all();
-        return view('jabatan.index', compact('pegawai'));
+        $jmlh_user =  User::count();
+        $jmlh_pegawai = Pegawai::count();
+        $jmlh_kontrak = Jabatan::count();
+        return view('jabatan.index', compact('pegawai', 'jmlh_user', 'jmlh_pegawai', 'jmlh_kontrak'));
         //return response()->json($pegawai);
     }
 
@@ -37,7 +41,10 @@ class JabatanController extends Controller
     {
         //
         $pegawai = Pegawai::find($id);
-        return view('jabatan.show', compact('pegawai'));
+        $jmlh_user =  User::count();
+        $jmlh_pegawai = Pegawai::count();
+        $jmlh_kontrak = Jabatan::count();
+        return view('jabatan.show', compact('pegawai', 'jmlh_user', 'jmlh_pegawai', 'jmlh_kontrak'));
         //return response()->json($pegawai);
     }
 
@@ -93,7 +100,10 @@ class JabatanController extends Controller
         //
         $pegawai = Pegawai::find($id);
         $jabatan = Jabatan::find($id);
-        return view('jabatan.edit', compact('jabatan', 'pegawai'));
+        $jmlh_user =  User::count();
+        $jmlh_pegawai = Pegawai::count();
+        $jmlh_kontrak = Jabatan::count();
+        return view('jabatan.edit', compact('jabatan', 'pegawai', 'jmlh_user', 'jmlh_pegawai', 'jmlh_kontrak'));
         //return response()->json($pegawai, $jabatan);
     }
 
@@ -137,7 +147,10 @@ class JabatanController extends Controller
     public function pel($id)
     {
         $pegawai = Pegawai::find($id);
-        return view('jabatan.create', ['pegawai' => $pegawai]);
+        $jmlh_user =  User::count();
+        $jmlh_pegawai = Pegawai::count();
+        $jmlh_kontrak = Jabatan::count();
+        return view('jabatan.create', ['pegawai' => $pegawai], compact('jmlh_user', 'jmlh_pegawai', 'jmlh_kontrak'));
         //return response()->json($pegawai);
     }
 }

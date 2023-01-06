@@ -10,7 +10,7 @@
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css"
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Login - Karyawan</title>
+    <title>Login - Admin Karyawan</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     </section>
     <section class="login-content">
         <div class="logo">
-            <h1>Sistem Login Karyawan</h1>
+            <h1>Sistem Login Admin Karyawan</h1>
         </div>
         <div class="login-box">
             <form class="login-form" method="POST" action="{{ route('login') }}">

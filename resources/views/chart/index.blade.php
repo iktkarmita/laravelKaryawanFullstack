@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="tile">
-                    <h3 class="tile-title">Pegawai Berdasarkan Status Pernikahan</h3>
+                    <h3 class="tile-title">Perbandingan Users dan Pegawai </h3>
                     <div class="embed-responsive embed-responsive-16by9">
                         <canvas class="embed-responsive-item" id="barChartDemo"></canvas>
                     </div>
@@ -28,7 +28,7 @@
             </div>
             <div class="col-md-6">
                 <div class="tile">
-                    <h3 class="tile-title">Pegawai Berdasarkan Jenis Kelamin</h3>
+                    <h3 class="tile-title">Pegawai Berdasarkan Jabatan Kontrak</h3>
                     <div class="embed-responsive embed-responsive-16by9">
                         <canvas class="embed-responsive-item" id="pieChartDemo"></canvas>
                     </div>

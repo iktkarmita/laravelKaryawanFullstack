@@ -6,6 +6,7 @@ use App\User;
 use App\Agama;
 use App\Darah;
 use App\Negara;
+use App\Jabatan;
 use App\Pegawai;
 use App\Keluarga;
 use Barryvdh\DomPDF\PDF;
@@ -24,7 +25,10 @@ class PegawaiController extends Controller
         //
         // dd('masuk');
         $pegawai = Pegawai::all();
-        return view('pegawai.tampil', compact('pegawai'));
+        $jmlh_user =  User::count();
+        $jmlh_pegawai = Pegawai::count();
+        $jmlh_kontrak = Jabatan::count();
+        return view('pegawai.tampil', compact('pegawai', 'jmlh_user', 'jmlh_pegawai', 'jmlh_kontrak'));
         //return response()->json($pegawai);
     }
 
@@ -35,8 +39,11 @@ class PegawaiController extends Controller
             'jumlah_pegawai' => Pegawai::count()
 
         ];
+        $jmlh_user =  User::count();
+        $jmlh_pegawai = Pegawai::count();
+        $jmlh_kontrak = Jabatan::count();
 
-        return view('pegawai.index', compact('dashboard'));
+        return view('pegawai.index', compact('dashboard', 'jmlh_user', 'jmlh_pegawai', 'jmlh_kontrak'));
         //return response()->json($dashboard);
     }
 
@@ -48,11 +55,10 @@ class PegawaiController extends Controller
     public function create()
     {
         //
-        //$agama = Agama::all();
-        //$negara = Negara::all();
-        //$darah = Darah::all();
-        //$keluarga = Keluarga::all();
-        return view('pegawai.tambah');
+        $jmlh_user =  User::count();
+        $jmlh_pegawai = Pegawai::count();
+        $jmlh_kontrak = Jabatan::count();
+        return view('pegawai.tambah', compact('jmlh_user', 'jmlh_pegawai', 'jmlh_kontrak'));
     }
 
     /**
@@ -98,7 +104,10 @@ class PegawaiController extends Controller
     {
         //
         $pegawai = Pegawai::find($id);
-        return view('pegawai.show', compact('pegawai'));
+        $jmlh_user =  User::count();
+        $jmlh_pegawai = Pegawai::count();
+        $jmlh_kontrak = Jabatan::count();
+        return view('pegawai.show', compact('pegawai', 'jmlh_user', 'jmlh_pegawai', 'jmlh_kontrak'));
         //return response()->json($pegawai);
     }
 
@@ -113,8 +122,15 @@ class PegawaiController extends Controller
         //
 
         $pegawai = Pegawai::find($id);
-
-        return view('pegawai.edit', compact('pegawai'));
+        $jmlh_user =  User::count();
+        $jmlh_pegawai = Pegawai::count();
+        $jmlh_kontrak = Jabatan::count();
+        return view('pegawai.edit', compact(
+            'pegawai',
+            'jmlh_user',
+            'jmlh_pegawai',
+            'jmlh_kontrak'
+        ));
         //return response()->json($pegawai);
     }
 

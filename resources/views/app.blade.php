@@ -34,10 +34,7 @@
             aria-label="Hide Sidebar"></a>
         <!-- Navbar Right Menu-->
         <ul class="app-nav">
-            <li class="app-search">
-                <input class="app-search__input" type="search" placeholder="Search">
-                <button class="app-search__button"><i class="fa fa-search"></i></button>
-            </li>
+
             <!-- User Menu-->
             <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown"
                     aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
@@ -87,8 +84,8 @@
                         class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Pegawai</span><i
                         class="treeview-indicator fa fa-angle-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a class="treeview-item" href="{{ route('pegawai.index') }}"><i
-                                class="icon fa fa-circle-o"></i> Data Pegawai</a></li>
+                    <li><a class="treeview-item" href="{{ route('pegawai.index') }}"><i class="icon fa fa-circle-o"></i>
+                            Data Pegawai</a></li>
                     <li><a class="treeview-item" href="{{ route('pegawai.create') }}" target=""
                             rel="noopener"><i class="icon fa fa-circle-o"></i> Tambah Pegawai</a></li>
                     <!-- <li><a class="treeview-item" href="ui-cards.html"><i class="icon fa fa-circle-o"></i> Cards</a></li>
@@ -135,43 +132,46 @@
     <!-- Page specific javascripts-->
     <script type="text/javascript" src="{{ asset('template/docs/js/plugins/chart.js') }}"></script>
     <script type="text/javascript">
+        var jmlh_pegawai = {{ json_encode($jmlh_pegawai) }}
+        var jmlh_user = {{ json_encode($jmlh_user) }}
+        var jmlh_kontrak = {{ json_encode($jmlh_kontrak) }}
         var data = {
-            labels: ["Pegawai"],
+            labels: ["User Dan Pegawai"],
             datasets: [{
-                    label: "My First dataset",
+                    label: "Jumlah User",
                     fillColor: "rgba(220,220,220,0.2)",
                     strokeColor: "rgba(220,220,220,1)",
                     pointColor: "rgba(220,220,220,1)",
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [3],
+                    data: [jmlh_user],
                     // label: "Sudah Menikah"
                 },
                 {
-                    label: "My Second dataset",
+                    label: "Jumlah Pegawai",
                     fillColor: "rgba(151,187,205,0.2)",
                     strokeColor: "rgba(151,187,205,1)",
                     pointColor: "rgba(151,187,205,1)",
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(151,187,205,1)",
-                    data: [2],
+                    data: [jmlh_pegawai],
                     // label: "Belum Menikah"
                 }
             ]
         };
         var pdata = [{
-                value: 3,
+                value: jmlh_pegawai,
                 color: "#46BFBD",
                 highlight: "#5AD3D1",
-                label: "Laki-laki"
+                label: "Jumlah Pegawai"
             },
             {
-                value: 2,
+                value: jmlh_kontrak,
                 color: "#F7464A",
                 highlight: "#FF5A5E",
-                label: "Perempuan"
+                label: " Jumlah Kontrak"
             }
         ]
 

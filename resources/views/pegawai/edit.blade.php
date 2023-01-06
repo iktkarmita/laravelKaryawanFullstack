@@ -105,7 +105,7 @@
                             <div class="col-md-8 col-md-offset-3">
                                 <button class="btn btn-primary" type="submit"><i
                                         class="fa fa-fw fa-lg fa-check-circle"></i>Edit</button>
-                                <a class="btn btn-secondary" href="#"><i
+                                <a class="btn btn-secondary" href="http://127.0.0.1:8000/pegawai"><i
                                         class="fa fa-fw fa-lg fa-times-circle"></i>Kembali</a>
                             </div>
 

@@ -56,7 +56,7 @@
                             <div class="col-md-8 col-md-offset-3">
                                 <button class="btn btn-primary" type="submit"><i
                                         class="fa fa-fw fa-lg fa-check-circle"></i>Tambah</button>
-                                <a class="btn btn-secondary" href="/pegawai/{{ $pegawai->id }}/KontrakdanJabatan"><i
+                                <a class="btn btn-secondary" href="/pegawai/{{ $pegawai->id }}/showKontrakdanJabatan"><i
                                         class="fa fa-fw fa-lg fa-times-circle"></i>Kembali</a>
                             </div>
                         </div>

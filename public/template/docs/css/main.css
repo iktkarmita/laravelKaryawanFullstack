@@ -14521,7 +14521,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .material-half-bg .cover {
-  background-color: #009688;
+  background-color: #6a6a6a;
   height: 50vh;
 }
 
@@ -14951,9 +14951,9 @@ be a descendant of the grid when it is being dragged.
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 40px;
+  left: 20px;
+  right: 20px;
+  padding: 12px;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.5s ease-in-out;
